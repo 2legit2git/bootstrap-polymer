@@ -1,0 +1,43 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+
+
+
+<polymer-element name="realtime-text" attributes="prefixed" customattr class="btn btn-danger">
+  <template>
+    <link rel="stylesheet" href="realtime-text.css">
+
+  <core-ajax 
+    id="core-ajax"
+    auto
+    url="http://www.filltext.com/"
+    params='{"rows": "5", "fname": "{firstName}", "lname": "{lastName}","company": "{business}"}'
+    handleAs="json"
+    response="{{people}}"
+  ></core-ajax>
+      <core-field>
+  <paper-icon-button icon="menu"></paper-icon-button>
+  <label>{{prefixed}} {{text}}!</label>
+  <button class="btn btn-warning">yo</button>
+
+  <input type="{{text}}" value="{{text}}" placeholder="I have a label" flex>
+  <template repeat="{{person in people}}">
+    <ul><li>{{person.fname}}</li><li>{{person.lname}}</li><li>{{person.company}}</li></ul>
+      <button class="btn btn-warning">yo</button>
+  </template>
+
+</core-field>
+
+  </template>
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        prefixed : 'tes',
+        people : []
+      });
+
+    })();
+  </script>
+</polymer-element>
