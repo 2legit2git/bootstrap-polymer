@@ -2,7 +2,7 @@
 <link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
 
 
-<polymer-element name="cody-test" attributes="">
+<polymer-element name="grab-json" attributes="">
   <template>
 
     <style>
@@ -16,16 +16,16 @@
 <core-ajax 
       id="ajax"
       auto 
-      url="http://www.filltext.com/"
-      params="{{params}}"
+      url="http://nxs.us.to/siliconehose/getJson.php"
       handleAs="json"
       response="{{response}}"
 
       >
 </core-ajax>
   <ol>
-    <template repeat="{{response}}">
-      <li>{{lname}}, {{fname}}</li>
+    
+    <template repeat="{{response.rows}}">
+      <li>{{price}}, {{name}}, {{id}}</li>
     </template>
   </ol>
 
@@ -40,13 +40,13 @@
 
       Polymer({
         greeting : '\'Allo',
-        params: '{"rows":2, "fname":"{firstName}", "lname":"{lastName}"}',
+        //params: '',
 
         clicked : function(){
-          var val = Math.floor((Math.random() * 10) + 1);
-          var paramStr = '{"rows":' + val + ', "fname":"{firstName}", "lname":"{lastName}"}';
-          this.$.ajax.params = paramStr;
-          //this.$.ajax.go();
+          //var val = Math.floor((Math.random() * 10) + 1);
+          //var paramStr = '{"rows":' + val + ', "fname":"{firstName}", "lname":"{lastName}"}';
+          //this.$.ajax.params = paramStr;
+          this.$.ajax.go();
         }
       });
 
