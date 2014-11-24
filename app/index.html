@@ -11,7 +11,7 @@
 <script src="bower_components/platform/platform.js"></script>
   <!-- build:css styles/main.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
   <!-- endbower -->
   <link rel="stylesheet" href="styles/main.css">
 
@@ -20,6 +20,44 @@
   <!-- build:vulcanized elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
   <!-- endbuild-->
+  <style>
+  html,body {
+    height: 100%;
+    margin: 0;
+    background-color: #E5E5E5;
+    font-family: 'RobotoDraft', sans-serif;
+  }
+  core-header-panel {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; 
+  }
+  core-toolbar {
+    background: #03a9f4;
+    color: white;
+  }
+  #tabs {
+    width: 100%;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  text-transform: uppercase;
+  }
+  .container {
+    width: 80%;
+    margin: 50px auto;
+  }
+  @media (min-width: 481px) {
+    #tabs {
+      width: 300px;
+    }
+    .container {
+      width: 400px;
+    }
+  }
+  </style>
 </head>
 
 <body unresolved>
@@ -29,7 +67,36 @@
   <cody-test></cody-test>
   <grab-json></grab-json>
 
+
 </div>
+  <core-header-panel>
+
+    <core-toolbar>
+
+      <paper-tabs id="tabs" selected="all" self-end>
+        <paper-tab name="all">All</paper-tab>
+        <paper-tab name="favorites">Favorites</paper-tab>
+        <paper-tab name="dildo">dildo</paper-tab>
+      </paper-tabs>
+
+    </core-toolbar>querySelector21
+
+    <div class="container" layout vertical center>
+      <post-list show="all"></post-list>
+    </div>
+
+  </core-header-panel>
+
+  <script>
+  var tabs = document.querySelector('paper-tabs');
+  var list = document.querySelector('post-list');
+
+  tabs.addEventListener('core-select', function() {
+    list.show = tabs.selected;
+  });
+  </script>
+
+
 
 
 
