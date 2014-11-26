@@ -39,8 +39,8 @@
       padding: 10px 15px;
       background-color: #f3f3f3;
       border: 1px solid #dedede;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
       font-size: 18px;
       cursor: pointer;
       -webkit-user-select: none;
@@ -54,7 +54,7 @@
       padding: 15px;
       border: 1px solid #dedede;
       border-top: none;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
     }
     

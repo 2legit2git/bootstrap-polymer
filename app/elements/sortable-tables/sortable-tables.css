@@ -1,5 +1,6 @@
 :host {
 	display: block;
+}
   .panel {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size:14px;
@@ -555,4 +556,4 @@
 	margin-top: 2px;
 	height: 18px;
 }
-}
+

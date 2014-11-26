@@ -31,18 +31,20 @@
 
 
 
-<div id="collapse" class="heading" on-click="{{toggle}}">Collapse #1</div>
-  <core-collapse>
-    <div class="content">
+<div class="heading" on-click="{{toggle1}}">Collapse #1</div>
+  <core-collapse id="collapse1" >
+    <div class="content" >
       <div>Lorem </div>
     </div>
     <div class="content">
         <div>Lorem </div>
       </div>
   </core-collapse>
-  <div class="heading" on-click="{{toggle}}">Collapse #2</div>
-    <core-collapse>
+  <div class="heading" on-click="{{toggle2}}">Collapse #2</div>
+    <core-collapse id="collapse2">
       <div class="content">
+        <div>Lorem </div>
+        <div>Lorem </div>
         <div>Lorem </div>
       </div>
     </core-collapse>
@@ -67,8 +69,11 @@
           //this.$.ajax.go();
         },
 
-        toggle: function() {
-          this.$.core-collapse.toggle();
+        toggle1: function() {
+          this.$.collapse1.toggle();
+        },
+        toggle2: function() {
+          this.$.collapse2.toggle();
         }
 
       });
