@@ -1,0 +1,78 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-selector/core-selector.html">
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../../bower_components/core-collapse/core-collapse.html">
+
+<polymer-element name="selectable-rows" attributes="">
+
+  <template>
+
+
+    <link rel="stylesheet" href="selectable-rows.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css" />
+     <button id="push" on-click="{{clicked}}" class="btn btn-success">push me</button>
+
+    <core-ajax 
+      id="ajax"
+      auto 
+      url="http://www.filltext.com/"
+      params="{{params}}"
+      handleAs="json"
+      response="{{response}}"
+
+      >
+</core-ajax>
+
+    <core-selector class="list" id="selector" valueattr="label" selected="foo">
+      <template repeat="{{response}}">
+        <li>{{lname}}, {{fname}}</li>
+      </template>
+</core-selector>
+
+
+
+<div id="collapse" class="heading" on-click="{{toggle}}">Collapse #1</div>
+  <core-collapse>
+    <div class="content">
+      <div>Lorem </div>
+    </div>
+    <div class="content">
+        <div>Lorem </div>
+      </div>
+  </core-collapse>
+  <div class="heading" on-click="{{toggle}}">Collapse #2</div>
+    <core-collapse>
+      <div class="content">
+        <div>Lorem </div>
+      </div>
+    </core-collapse>
+  
+  
+  <br>
+  
+
+  </template>
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        greeting : '\'Allo',
+        params: '{"rows":5, "fname":"{firstName}", "lname":"{lastName}"}',
+
+        clicked : function(){
+          var val = Math.floor((Math.random() * 10) + 1);
+          var paramStr = '{"rows":' + val + ', "fname":"{firstName}", "lname":"{lastName}"}';
+          this.$.ajax.params = paramStr;
+          //this.$.ajax.go();
+        },
+
+        toggle: function() {
+          this.$.core-collapse.toggle();
+        }
+
+      });
+
+    })();
+  </script>
+</polymer-element>

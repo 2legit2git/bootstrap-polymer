@@ -1,0 +1,27 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../../bower_components/sortable-table/sortable-table.html">
+
+<polymer-element name="sortable-tables" attributes="" noscript>
+  <template>
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap-table.min.css">
+
+
+<div class="row">
+        <table id="table-javascript" class="table-condensed" data-sort-name="id" data-toggle="table" data-url="data1.json" data-click-to-select="true" data-show-refresh="true" data-height="520" data-show-toggle="true" data-show-columns="true" data-pagination="true" data-search="true" data-select-item-name="toolbar1">
+          <thead>
+            <tr>
+              <th data-field="id" data-sortable="true">id</th>
+              <th data-field="name" data-sortable="true">name</th>
+              <th data-field="price" data-sortable="true">price</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+  </template>
+  <script src="../../bower_components/jquery/dist/jquery.js"></script>
+  <script src="bootstrap-table.min.js"></script>  
+  
+</polymer-element>

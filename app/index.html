@@ -8,10 +8,10 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<script src="bower_components/platform/platform.js"></script>
+  <script src="bower_components/platform/platform.js"></script>
   <!-- build:css styles/main.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <!-- endbower -->
   <link rel="stylesheet" href="styles/main.css">
 
@@ -20,85 +20,63 @@
   <!-- build:vulcanized elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
   <!-- endbuild-->
-  <style>
-  html,body {
-    height: 100%;
-    margin: 0;
-    background-color: #E5E5E5;
-    font-family: 'RobotoDraft', sans-serif;
-  }
-  core-header-panel {
-    height: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch; 
-  }
-  core-toolbar {
-    background: #03a9f4;
-    color: white;
-  }
-  #tabs {
-    width: 100%;
-    margin: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  text-transform: uppercase;
-  }
-  .container {
-    width: 80%;
-    margin: 50px auto;
-  }
-  @media (min-width: 481px) {
-    #tabs {
-      width: 300px;
+ 
+ <style>
+    
+    .content {
+      background-color: #fff;
+      height: 5000px;
+      padding: 20px;
     }
-    .container {
-      width: 400px;
+    
+    /* some default styles for mode="cover" on core-scaffold */
+    core-scaffold[mode=cover]::shadow core-header-panel::shadow #mainContainer {
+      left: 120px;
     }
-  }
+    
+    core-scaffold[mode=cover] .content {
+      margin: 20px 100px 20px 0;
+    }
+
+
+
+    
   </style>
+
 </head>
 
 <body unresolved>
+
+
+  <core-scaffold>
   
-
-  <div class="container">
-  <cody-test></cody-test>
-  <grab-json></grab-json>
-
-
-</div>
-  <core-header-panel>
-
-    <core-toolbar>
-
-      <paper-tabs id="tabs" selected="all" self-end>
-        <paper-tab name="all">All</paper-tab>
-        <paper-tab name="favorites">Favorites</paper-tab>
-        <paper-tab name="dildo">dildo</paper-tab>
-      </paper-tabs>
-
-    </core-toolbar>querySelector21
-
-    <div class="container" layout vertical center>
-      <post-list show="all"></post-list>
+    <core-header-panel navigation flex mode="seamed">
+      <core-toolbar style="background-color: #526E9C; color: #fff;">Application</core-toolbar>
+      <core-menu>
+        <core-item icon="settings" label="item1"></core-item>
+        <core-item icon="settings" label="item2"></core-item>
+      </core-menu>
+    </core-header-panel>
+    
+    <div tool>Title
     </div>
 
-  </core-header-panel>
-
-  <script>
-  var tabs = document.querySelector('paper-tabs');
-  var list = document.querySelector('post-list');
-
-  tabs.addEventListener('core-select', function() {
-    list.show = tabs.selected;
-  });
-  </script>
+    <div class="content">
+<!--       <cody-test></cody-test>
+      <grab-json></grab-json> -->
 
 
 
 
+<selectable-rows>
+</selectable-rows>
+
+
+
+
+    </div>
+
+  </core-scaffold>
 
   <!-- build:js scripts/app.js -->
   <!-- bower:js -->
@@ -107,7 +85,6 @@
   <!-- endbower -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
-
 
 </body>
 

@@ -6,7 +6,8 @@
     "paper-elements": "Polymer/paper-elements#^0.4.0",
     "polymer": "Polymer/polymer#^0.4.0",
     "bootstrap": "~3.3.1",
-    "apply-author-styles": "eee-c/apply-author-styles"
+    "apply-author-styles": "eee-c/apply-author-styles",
+    "sortable-table": "~0.10.1"
   },
   "devDependencies": {
     "polymer-test-tools": "Polymer/polymer-test-tools#^0.4.0",
